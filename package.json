@@ -1,0 +1,54 @@
+{
+  "name": "@sutton-signwriting/font-db",
+  "description": "a javascript package for node that generates SVG and PNG images for individual symbols and complete signs",
+  "version": "1.0.0",
+  "keywords": [
+    "sqlite",
+    "font",
+    "sutton",
+    "signwriting",
+    "sign language",
+    "script",
+    "node"
+  ],
+  "homepage": "https://sutton-signwriting.github.io/font-db/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sutton-signwriting/font-db.git"
+  },
+  "bugs": "https://github.com/sutton-signwriting/core/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Steve Slevinski",
+    "email": "slevinski@signwriting.org",
+    "url": "https://SteveSlevinski.me"
+  },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "package.json",
+    "signwriting.svg",
+    "db/",
+    "fsw/",
+    "swu/",
+    "server/"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "jest || true",
+    "test:watch": "jest --watchAll || true",
+    "docs": "documentation build index.js --config documentation.yml -f html -o docs",
+    "postdocs": "node addstyle.js",
+    "docs:server": "documentation serve --watch index.js --config documentation.yml",
+    "server": "node server/server.js"
+  },
+  "dependencies": {
+    "sqlite3": "^4.1.0",
+    "svg2img": "^0.6.1"
+  },
+  "devDependencies": {
+    "documentation": "^12.1.2",
+    "jest": "^24.9.0"
+  }
+}

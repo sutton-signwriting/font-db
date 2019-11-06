@@ -1,0 +1,21 @@
+toc:
+  - name: Font Database
+    file: README.md
+  - fsw
+  - fsw.symbolSvg
+  - fsw.symbolPng
+  - fsw.symbolPngDataUrl
+  - fsw.symbolNormalize
+  - fsw.signSvg
+  - fsw.signPng
+  - fsw.signPngDataUrl
+  - fsw.signNormalize
+  - swu
+  - swu.symbolSvg
+  - swu.symbolPng
+  - swu.symbolPngDataUrl
+  - swu.symbolNormalize
+  - swu.signSvg
+  - swu.signPng
+  - swu.signPngDataUrl
+  - swu.signNormalize

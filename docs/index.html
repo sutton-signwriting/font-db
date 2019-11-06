@@ -1,0 +1,1763 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>@sutton-signwriting/font-db 1.0.0 | Documentation</title>
+  <meta name='description' content='a javascript package for node that generates SVG and PNG images for individual symbols and complete signs'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' rel='stylesheet'>
+  <link href='assets/style.css' rel='stylesheet'>
+  <link href='assets/github.css' rel='stylesheet'>
+  <link href='assets/split.css' rel='stylesheet'>
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>@sutton-signwriting/font-db</h3>
+          <div class='mb1'><code>1.0.0</code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#font-database'
+                  class="h5 bold black caps">
+                  Font Database
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fsw'
+                  class="">
+                  fsw
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fswsymbolsvg'
+                  class="">
+                  fsw.symbolSvg
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fswsymbolpng'
+                  class="">
+                  fsw.symbolPng
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fswsymbolpngdataurl'
+                  class="">
+                  fsw.symbolPngDataUrl
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fswsymbolnormalize'
+                  class="">
+                  fsw.symbolNormalize
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fswsignsvg'
+                  class="">
+                  fsw.signSvg
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fswsignpng'
+                  class="">
+                  fsw.signPng
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fswsignpngdataurl'
+                  class="">
+                  fsw.signPngDataUrl
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#fswsignnormalize'
+                  class="">
+                  fsw.signNormalize
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#swu'
+                  class="">
+                  swu
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#swusymbolsvg'
+                  class="">
+                  swu.symbolSvg
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#swusymbolpng'
+                  class="">
+                  swu.symbolPng
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#swusymbolpngdataurl'
+                  class="">
+                  swu.symbolPngDataUrl
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#swusymbolnormalize'
+                  class="">
+                  swu.symbolNormalize
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#swusignsvg'
+                  class="">
+                  swu.signSvg
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#swusignpng'
+                  class="">
+                  swu.signPng
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#swusignpngdataurl'
+                  class="">
+                  swu.signPngDataUrl
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#swusignnormalize'
+                  class="">
+                  swu.signNormalize
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='font-database' class='mt0'>
+    Font Database
+  </h2>
+
+  
+    <h1>@sutton-signwriting/font-db</h1>
+<p><a href="https://gitter.im/sutton-signwriting/community?utm_source=badge&#x26;utm_medium=badge&#x26;utm_campaign=pr-badge&#x26;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter"></a>
+<a href="https://www.npmjs.com/package/@sutton-signwriting/font-db"><img src="https://img.shields.io/npm/v/@sutton-signwriting/font-db" alt="version"></a>
+<a href="https://npm-stat.com/charts.html?package=@sutton-signwriting/font-db&#x26;from=2019-10-31"><img src="https://img.shields.io/npm/dm/@sutton-signwriting/font-db" alt="npm downloads"></a></p>
+<p><img src="./signwriting.svg" alt="SignWriting"></p>
+<p>@sutton-signwriting/font-db is a javascript package for node that generates SVG and PNG images for individual symbols and complete signs. The package covers the entire set of the International SignWritnig Alphabet 2010 (ISWA 2010).</p>
+<p>This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in Unicode (SWU) character sets, along with the style string.  See <a href="https://tools.ietf.org/id/draft-slevinski-formal-signwriting-07.html">draft-slevinski-formal-signwriting</a> for detailed specification.</p>
+<h2>Useful links</h2>
+<ul>
+<li>GitHub Repo: <a href="https://github.com/sutton-signwriting/font-db">https://github.com/sutton-signwriting/font-db</a></li>
+<li>Documentation: <a href="https://sutton-signwriting.github.io/font-db/">https://sutton-signwriting.github.io/font-db/</a></li>
+<li>Issue Tracker: <a href="https://github.com/sutton-signwriting/font-db/issues">https://github.com/sutton-signwriting/font-db/issues</a></li>
+<li>Online Discussion: <a href="https://gitter.im/sutton-signwriting/community">https://gitter.im/sutton-signwriting/community</a></li>
+</ul>
+<h2>Install in existing NPM package</h2>
+<pre><code>    npm install @sutton-signwriting/font-db
+</code></pre>
+<h2>Install Font Database Package as stand-alone</h2>
+<pre><code>    # download package
+    git clone https://github.com/sutton-signwriting/font-db.git
+
+    # install dependancies
+    cd font-db
+    npm install
+
+    # test project
+    npm run test
+
+    # create project documentation
+    npm run docs
+
+    # start built-in server
+    npm run server
+</code></pre>
+<h2>Usage</h2>
+<h3>Using in code</h3>
+<pre><code>    // import entire library
+    const fontDb = require('@sutton-signwriting/font-db);
+
+    // import individual module
+    const fsw = require('@sutton-signwriting/font-db/fsw);
+</code></pre>
+<h3>Using on the commad line</h3>
+<pre><code>    # works for script with FSW and SWU, Symbol and Sign, SVG and PNG.
+
+    # output in the terminal
+    node fsw/fsw-sign-svg M525x535S2e748483x510S10011501x466S2e704510x500S10019476x475-C
+
+    # save to file
+    node fsw/fsw-sign-svg M525x535S2e748483x510S10011501x466S2e704510x500S10019476x475-C output.svg
+</code></pre>
+<h2>License</h2>
+<p>MIT</p>
+<h2>SignWriting General Interest</h2>
+<ul>
+<li>SignWriting Website: <a href="https://signwriting.org/">https://signwriting.org/</a></li>
+<li>Wikipedia page: <a href="https://en.wikipedia.org/wiki/SignWriting">https://en.wikipedia.org/wiki/SignWriting</a></li>
+<li>Email Discussion: <a href="https://www.signwriting.org/forums/swlist/">https://www.signwriting.org/forums/swlist/</a></li>
+<li>Facebook Group: <a href="https://www.facebook.com/groups/SuttonSignWriting/">https://www.facebook.com/groups/SuttonSignWriting/</a></li>
+</ul>
+
+  
+</section></div>
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fsw'>
+      fsw
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The fsw module contains functions for handling Formal SignWriitng in ASCII (FSW) characters.
+<a href="https://tools.ietf.org/id/draft-slevinski-formal-signwriting-07.html#rfc.section.2.2.1">FSW characters definition</a></p>
+
+    <div class='pre p1 fill-light mt0'>fsw</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fswsymbolsvg'>
+      fsw.symbolSvg
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates an SVG image from an FSW symbol key with an optional style string</p>
+
+    <div class='pre p1 fill-light mt0'>fsw.symbolSvg(fswSym: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fswSym</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an FSW symbol key with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is '&lt;svg..."</span>)
+  }
+}
+
+fsw.symbolSvg(<span class="hljs-string">'S10000'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fswsymbolpng'>
+      fsw.symbolPng
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates a binary PNG image from an FSW symbol key with an optional stle string</p>
+
+    <div class='pre p1 fill-light mt0'>fsw.symbolPng(fswSym: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fswSym</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an FSW symbol key with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is '&lt;Buffer 89 50 4e 47..."</span>)
+  }
+}
+
+fsw.symbolPng(<span class="hljs-string">'S10000'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fswsymbolpngdataurl'>
+      fsw.symbolPngDataUrl
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates a data url PNG image from an FSW symbol key with an optional stle string</p>
+
+    <div class='pre p1 fill-light mt0'>fsw.symbolPngDataUrl(fswSym: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fswSym</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an FSW symbol key with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is 'data:image/png;base64,iVBORw..."</span>)
+  }
+}
+
+fsw.symbolPndDataUrl(<span class="hljs-string">'S10000'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fswsymbolnormalize'>
+      fsw.symbolNormalize
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that normalizes a symbol with a minimum coordinate for a center of 500,500</p>
+
+    <div class='pre p1 fill-light mt0'>fsw.symbolNormalize(fswSym: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fswSym</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an FSW symbol key with optional coordinate and style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is 'S20500495x495-C'"</span>)
+  }
+}
+
+fsw.symbolNormalize(<span class="hljs-string">'S20500-C'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fswsignsvg'>
+      fsw.signSvg
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates an SVG image from an FSW sign with an optional style string</p>
+
+    <div class='pre p1 fill-light mt0'>fsw.signSvg(fswSign: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fswSign</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an FSW sign with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is '&lt;svg..."</span>)
+  }
+}
+
+fsw.signSvg(<span class="hljs-string">'M525x535S2e748483x510S10011501x466S2e704510x500S10019476x475'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fswsignpng'>
+      fsw.signPng
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates a binary PNG image from an FSW sign with an optional style string</p>
+
+    <div class='pre p1 fill-light mt0'>fsw.signPng(fswSign: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fswSign</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an FSW sign with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is '&lt;Buffer 89 50 4e 47..."</span>)
+  }
+}
+
+fsw.signPng(<span class="hljs-string">'M525x535S2e748483x510S10011501x466S20544510x500S10019476x475'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fswsignpngdataurl'>
+      fsw.signPngDataUrl
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates a data url PNG image from an FSW sign with an optional style string</p>
+
+    <div class='pre p1 fill-light mt0'>fsw.signPngDataUrl(fswSign: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fswSign</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an FSW sign with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is 'data:image/png;base64,iVBORw..."</span>)
+  }
+}
+
+fsw.signPngDataUrl(<span class="hljs-string">'M525x535S2e748483x510S10011501x466S20544510x500S10019476x475'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='fswsignnormalize'>
+      fsw.signNormalize
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that normalizes an FSW sign for a center of 500,500</p>
+
+    <div class='pre p1 fill-light mt0'>fsw.signNormalize(fswSign: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fswSign</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an FSW sign with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is 'M525x535S2e748483x510S10011501x466S2e704510x500S10019476x475'"</span>)
+  }
+}
+
+fsw.signNormalize(<span class="hljs-string">'M525x535S2e748483x510S10011501x466S2e704510x500S10019476x475'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='swu'>
+      swu
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>The swu module contains functions for handling Formal SignWriitng in ASCII (SWU) characters.
+<a href="https://tools.ietf.org/id/draft-slevinski-formal-signwriting-07.html#rfc.section.2.2.2">SWU characters definition</a></p>
+
+    <div class='pre p1 fill-light mt0'>swu</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='swusymbolsvg'>
+      swu.symbolSvg
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates an SVG image from an SWU symbol key with an optional style string</p>
+
+    <div class='pre p1 fill-light mt0'>swu.symbolSvg(swuSym: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>swuSym</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an SWU symbol key with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is '&lt;svg..."</span>)
+  }
+}
+
+swu.symbolSvg(<span class="hljs-string">'񀀁'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='swusymbolpng'>
+      swu.symbolPng
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates a binary PNG image from an SWU symbol key with an optional stle string</p>
+
+    <div class='pre p1 fill-light mt0'>swu.symbolPng(swuSym: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>swuSym</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an SWU symbol key with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is '&lt;Buffer 89 50 4e 47..."</span>)
+  }
+}
+
+swu.symbolPng(<span class="hljs-string">'񀀁'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='swusymbolpngdataurl'>
+      swu.symbolPngDataUrl
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates a data url PNG image from an SWU symbol key with an optional stle string</p>
+
+    <div class='pre p1 fill-light mt0'>swu.symbolPngDataUrl(swuSym: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>swuSym</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an SWU symbol key with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is 'data:image/png;base64,iVBORw..."</span>)
+  }
+}
+
+swu.symbolPndDataUrl(<span class="hljs-string">'񀀁'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='swusymbolnormalize'>
+      swu.symbolNormalize
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that normalizes a symbol with a minimum coordinate for a center of 500,500</p>
+
+    <div class='pre p1 fill-light mt0'>swu.symbolNormalize(swuSym: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>swuSym</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an SWU symbol with optional coordinate and style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is '񆇡𝤁𝤁-C'"</span>)
+  }
+}
+
+swu.symbolNormalize(<span class="hljs-string">'񆇡-C'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='swusignsvg'>
+      swu.signSvg
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates an SVG image from an SWU sign with an optional style string</p>
+
+    <div class='pre p1 fill-light mt0'>swu.signSvg(swuSign: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>swuSign</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an SWU sign with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is '&lt;svg..."</span>)
+  }
+}
+
+swu.signSvg(<span class="hljs-string">'𝠃𝤟𝤩񋛩𝣵𝤐񀀒𝤇𝣤񋚥𝤐𝤆񀀚𝣮𝣭'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='swusignpng'>
+      swu.signPng
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates a binary PNG image from an SWU sign with an optional style string</p>
+
+    <div class='pre p1 fill-light mt0'>swu.signPng(swuSign: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>swuSign</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an SWU sign with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is '&lt;Buffer 89 50 4e 47..."</span>)
+  }
+}
+
+swu.signPng(<span class="hljs-string">'𝠃𝤟𝤩񋛩𝣵𝤐񀀒𝤇𝣤񆈥𝤐𝤆񀀚𝣮𝣭'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='swusignpngdataurl'>
+      swu.signPngDataUrl
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that creates a data url PNG image from an SWU sign with an optional style string</p>
+
+    <div class='pre p1 fill-light mt0'>swu.signPngDataUrl(swuSign: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>swuSign</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an SWU sign with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is 'data:image/png;base64,iVBORw..."</span>)
+  }
+}
+
+swu.signPngDataUrl(<span class="hljs-string">'𝠃𝤟𝤩񋛩𝣵𝤐񀀒𝤇𝣤񆈥𝤐𝤆񀀚𝣮𝣭'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='swusignnormalize'>
+      swu.signNormalize
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Function that normalizes an SWU sign for a center of 500,500</p>
+
+    <div class='pre p1 fill-light mt0'>swu.signNormalize(swuSign: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>swuSign</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    an SWU sign with optional style string
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
+	    a callback function with error and result parameters
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> callback = <span class="hljs-function">(<span class="hljs-params">error, result</span>) =&gt;</span> {
+  <span class="hljs-keyword">if</span> (error) {
+    <span class="hljs-built_in">console</span>.log(error)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(result + <span class="hljs-string">" is '𝠃𝤟𝤩񋛩𝣵𝤐񀀒𝤇𝣤񋚥𝤐𝤆񀀚𝣮𝣭'"</span>)
+  }
+}
+
+swu.signNormalize(<span class="hljs-string">'𝠃𝤟𝤩񋛩𝣵𝤐񀀒𝤇𝣤񋚥𝤐𝤆񀀚𝣮𝣭'</span>, callback )</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
