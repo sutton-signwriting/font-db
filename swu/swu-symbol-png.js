@@ -1,79 +1,56 @@
 
-const svg2img = require('svg2img');
+const { svg2png } = require('../common/svg2png')
 const { symbolSvg } = require('./swu-symbol-svg');
 const fs = require('fs');
 
 /**
- * Function that creates a binary PNG image from an SWU symbol key with an optional stle string
+ * Function that creates a binary PNG image from an SWU symbol key with an optional style string
  * @function swu.symbolPng
  * @param {string} swuSym - an SWU symbol key with optional style string
- * @param {function} callback - a callback function with error and result parameters
+ * @returns {ArrayBuffer} symbol png
  * @example
- * const callback = (error, result) => {
- *   if (error) {
- *     console.log(error)
- *   } else {
- *     console.log(result + " is '<Buffer 89 50 4e 47...")
- *   }
- * }
- * 
- * swu.symbolPng('񀀁', callback )
+ * // using promise.then
+ * swu.symbolPng('񀀁-C').then( png => {
+ *   console.log(png)
+ * })
+ * @example
+ * // using async/await
+ * const png = await swu.symbolPng('񀀁-C')
  */
-const symbolPng = (swuSym, callback) => {
-  symbolSvg(swuSym, (err, res) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      res = res.replace(/<text.*text>/g, "");
-      svg2img(res, (error, buffer) => {
-        if (error) {
-          callback(error, null);
-        } else {
-          callback(error, buffer);
-        }
-      })
-    }
-  })
+const symbolPng = async (swuSym) => {
+  let svg = await symbolSvg(swuSym);
+  svg = svg.replace(/<text.*text>/g, "");
+  const png = await svg2png(svg);
+  return png;
 }
 
 /**
  * Function that creates a data url PNG image from an SWU symbol key with an optional stle string
  * @function swu.symbolPngDataUrl
  * @param {string} swuSym - an SWU symbol key with optional style string
- * @param {function} callback - a callback function with error and result parameters
+ * @returns {string} symbol png
  * @example
- * const callback = (error, result) => {
- *   if (error) {
- *     console.log(error)
- *   } else {
- *     console.log(result + " is 'data:image/png;base64,iVBORw...")
- *   }
- * }
- * 
- * swu.symbolPndDataUrl('񀀁', callback )
+ * // using promise.then
+ * swu.symbolPndDataUrl('񀀁-C').then( png => {
+ *   console.log(png)
+ * })
+ * @example
+ * // using async/await
+ * const png = await swu.symbolPndDataUrl('񀀁-C')
  */
-const symbolPngDataUrl = (swuSym, callback) => {
-  symbolPng(swuSym, (err, res) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      return callback(err, 'data:image/png;base64,' + res.toString('base64'));
-    }
-  })
+const symbolPngDataUrl = async (swuSym) => {
+  const res = await symbolPng(swuSym);
+  return 'data:image/png;base64,' + res.toString('base64');
 }
 
 if (require.main === module) {
   if (process.argv[3]) {
-    symbolPng(process.argv[2], (err, res) => {
-      if (err) {
-        console.log(err)
-      } else {
-        fs.writeFileSync(process.argv[3], res);
-      }
+    symbolPng(process.argv[2]).then( res => {
+      fs.writeFileSync(process.argv[3], res);
     })
   } else {
-    symbolPngDataUrl(process.argv[2], (err, res) => {
-      console.log(err || res)
+    symbolPngDataUrl(process.argv[2]).then( res => {
+      console.log(res)
     })
   }
 } else {

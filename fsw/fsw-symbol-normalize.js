@@ -2,46 +2,35 @@
 const { db } = require('../db/db');
 const fsw = require('@sutton-signwriting/core/fsw');
 
-const blank = null;
-
 /**
  * Function that normalizes a symbol with a minimum coordinate for a center of 500,500
  * @function fsw.symbolNormalize
  * @param {string} fswSym - an FSW symbol key with optional coordinate and style string
- * @param {function} callback - a callback function with error and result parameters
+ * @returns {string} normalized symbol
  * @example
- * const callback = (error, result) => {
- *   if (error) {
- *     console.log(error)
- *   } else {
- *     console.log(result + " is 'S20500495x495-C'")
- *   }
- * }
- * 
- * fsw.symbolNormalize('S20500-C', callback )
+ * // using promise.then
+ * fsw.symbolNormalize('S20500-C').then( norm => {
+ *   console.log(norm)
+ * })
+ * @example
+ * // using async/await
+ * const norm = await fsw.symbolNormalize('S20500-C')
  */
-const symbolNormalize = (fswSym, callback) => {
+const symbolNormalize = async fswSym => {
+  const blank = '';
   const parsed = fsw.parse.symbol(fswSym);
-  if (parsed.symbol) {
-    db.get('select width,height from symbol where symkey=?', [parsed.symbol], (err, res) => {
-      if (err) {
-        callback(err, res);
-      } else {
-        if (!res) {
-          callback(err, blank)
-        } else {
-          callback(null, `${parsed.symbol}${500 - parseInt(res.width / 2)}x${500 - parseInt(res.width / 2)}${parsed.style || ''}`);
-        }
-      }
-    })
-  } else {
-    callback(null, blank);
-  }
+  if (!parsed.symbol) return blank;
+
+  const res = await db.query('select width,height from symbol where symkey=?', [parsed.symbol]);
+  const sym = res[0]
+  if (!sym) return blank;
+
+  return `${parsed.symbol}${500 - parseInt( (sym.width+1) / 2)}x${500 - parseInt( (sym.height+1) / 2)}${parsed.style || ''}`;
 }
 
 if (require.main === module) {
-  symbolNormalize(process.argv[2], (err, res) => {
-    console.log(err || res);
+  symbolNormalize(process.argv[2]).then( res => {
+    console.log(res)
   })
 } else {
   module.exports = { symbolNormalize }

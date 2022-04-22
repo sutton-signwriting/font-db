@@ -1,22 +1,12 @@
 
 const { signNormalize } = require('./swu-sign-normalize');
 
-it('should normalize a sign', done => {
-  signNormalize('𝠀񀀒񀀚񋚥񋛩𝠃𝤟𝤩񋛩𝣵𝤐񀀒𝤇𝣤񋚥𝤐𝤆񀀚𝣮𝣭',
-    (err, result) => {
-      expect(err).toBeFalsy();
-      expect(result).toBe('𝠀񀀒񀀚񋚥񋛩𝠃𝤟𝤩񋛩𝣵𝤐񀀒𝤇𝣤񋚥𝤐𝤆񀀚𝣮𝣭')
-      done();
-    }
-  )
+it('should normalize a sign', async () => {
+  const norm = await signNormalize('𝠀񀀒񀀚񋚥񋛩𝠃𝤟𝤩񋛩𝣵𝤐񀀒𝤇𝣤񋚥𝤐𝤆񀀚𝣮𝣭');
+  expect(norm).toBe('𝠀񀀒񀀚񋚥񋛩𝠃𝤟𝤩񋛩𝣵𝤐񀀒𝤇𝣤񋚥𝤐𝤆񀀚𝣮𝣭')
 })
 
-it('should normalize a sign with a styling string', done => {
-  signNormalize('𝠀񀀒񀀚񋚥񋛩𝠃𝤆𝤆񋛩𝣵𝤐񀀒𝤇𝣤񋚥𝤐𝤆񀀚𝣮𝣭-C',
-    (err, result) => {
-      expect(err).toBeFalsy();
-      expect(result).toBe('𝠀񀀒񀀚񋚥񋛩𝠃𝤟𝤩񋛩𝣵𝤐񀀒𝤇𝣤񋚥𝤐𝤆񀀚𝣮𝣭-C')
-      done();
-    }
-  )
+it('should normalize a sign with a styling string', async () => {
+  const norm = await signNormalize('𝠀񀀒񀀚񋚥񋛩𝠃𝤆𝤆񋛩𝣵𝤐񀀒𝤇𝣤񋚥𝤐𝤆񀀚𝣮𝣭-C');
+  expect(norm).toBe('𝠀񀀒񀀚񋚥񋛩𝠃𝤟𝤩񋛩𝣵𝤐񀀒𝤇𝣤񋚥𝤐𝤆񀀚𝣮𝣭-C')
 })

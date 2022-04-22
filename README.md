@@ -5,14 +5,19 @@
 
 ![SignWriting](./signwriting.svg)
 
-@sutton-signwriting/font-db is a javascript package for node that generates SVG and PNG images for individual symbols and complete signs. The package covers the entire set of the International SignWritnig Alphabet 2010 (ISWA 2010).
+@sutton-signwriting/font-db is a javascript package for node that generates SVG and PNG images for individual symbols, complete signs, and structured text. The package covers the entire set of the International SignWritnig Alphabet 2010 (ISWA 2010).
 
-This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in Unicode (SWU) character sets, along with the style string.  See [draft-slevinski-formal-signwriting](https://tools.ietf.org/id/draft-slevinski-formal-signwriting-07.html) for detailed specification.
+This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in Unicode (SWU) character sets, along with the style string.  See [draft-slevinski-formal-signwriting](https://tools.ietf.org/id/draft-slevinski-formal-signwriting-09.html) for detailed specification.
+
+> Author: https://SteveSlevinski.me  
+> Channel: https://www.youtube.com/channel/UCXu4AXlG0rXFtk_5SzumDow  
+> Sponsor: https://www.patreon.com/signwriting  
+> Donate: https://paypal.me/signwriting
 
 ## Useful links
 
 - GitHub Repo: https://github.com/sutton-signwriting/font-db
-- Documentation: https://sutton-signwriting.github.io/font-db/
+- Documentation: https://www.sutton-signwriting.io/font-db/
 - Issue Tracker: https://github.com/sutton-signwriting/font-db/issues
 - Online Discussion: https://gitter.im/sutton-signwriting/community
 
@@ -33,6 +38,8 @@ This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in 
 
     # test project
     npm run test
+    npm run testit fsw
+    npm run testit fsw-symbol-svg
 
     # create project documentation
     npm run docs
@@ -46,13 +53,13 @@ This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in 
 ### Using in code
 ```
     // import entire library
-    const fontDb = require('@sutton-signwriting/font-db);
+    const fontDb = require('@sutton-signwriting/font-db');
 
     // import individual module
-    const fsw = require('@sutton-signwriting/font-db/fsw);
+    const fsw = require('@sutton-signwriting/font-db/fsw');
 ```
 
-### Using on the commad line
+### Using on the command line
 ```
     # works for script with FSW and SWU, Symbol and Sign, SVG and PNG.
 

@@ -2,20 +2,36 @@ toc:
   - name: Font Database
     file: README.md
   - fsw
+  - fsw.symbolSvgBody
   - fsw.symbolSvg
   - fsw.symbolPng
   - fsw.symbolPngDataUrl
   - fsw.symbolNormalize
+  - fsw.signSvgBody
   - fsw.signSvg
   - fsw.signPng
   - fsw.signPngDataUrl
   - fsw.signNormalize
+  - fsw.columnSvg
+  - fsw.columnsSvg
+  - fsw.columnPng
+  - fsw.columnPngDataUrl
+  - fsw.columnsPng
+  - fsw.columnsPngDataUrl
   - swu
+  - swu.symbolSvgBody
   - swu.symbolSvg
   - swu.symbolPng
   - swu.symbolPngDataUrl
   - swu.symbolNormalize
+  - swu.signSvgBody
   - swu.signSvg
   - swu.signPng
   - swu.signPngDataUrl
   - swu.signNormalize
+  - swu.columnSvg
+  - swu.columnsSvg
+  - swu.columnPng
+  - swu.columnPngDataUrl
+  - swu.columnsPng
+  - swu.columnsPngDataUrl

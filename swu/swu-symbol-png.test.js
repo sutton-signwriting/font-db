@@ -5,22 +5,12 @@ it('should pass', () => {
   expect(true).toBe(true);
 })
 
-it('should have S10000', done => {
-  symbolPng('񀀁',
-    (err, res) => {
-      expect(err).toBeFalsy();
-      expect(res.toString('base64')).toBe('iVBORw0KGgoAAAANSUhEUgAAAA8AAAAeCAYAAADzXER0AAAABmJLR0QA/wD/AP+gvaeTAAAAO0lEQVQ4jWNkIA/8Z2BgYGAiUzPDqOZRzaOacQBGBmj2orvNLDDG///EO4CRkZFym0c1j2omCAYuYwAA9XQGOby+Wx8AAAAASUVORK5CYII=');
-      done();
-    }
-  )
+it('should have S10000', async () => {
+  const png = await symbolPng('񀀁');
+  expect(png.toString('base64')).toBe('iVBORw0KGgoAAAANSUhEUgAAABAAAAAeCAYAAAAl+Z4RAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVQ4je2TMQoAIAzEcuL/v1wHi7O0gssFbg1ZDmpEjlEUHCywwILNJF/1tQCAiPsQSe8KLLDgiUD0zqR2QZsF/6kHOePg1oUAAAAASUVORK5CYII=');
 })
 
-it('should return a blank svg for invalid key', done => {
-  symbolPng('񆈥',
-    (err, res) => {
-      expect(err).toBeFalsy();
-      expect(res.toString('base64')).toBe('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABmJLR0QA/wD/AP+gvaeTAAAAC0lEQVQImWNgAAIAAAUAAWJVMogAAAAASUVORK5CYII=')
-      done();
-    }
-  )
+it('should return a blank svg for invalid key', async () => {
+  const png = await symbolPng('񆈥');
+  expect(png.toString('base64')).toBe('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABmJLR0QA/wD/AP+gvaeTAAAAC0lEQVQImWNgAAIAAAUAAWJVMogAAAAASUVORK5CYII=')
 })
