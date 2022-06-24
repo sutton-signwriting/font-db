@@ -32,7 +32,8 @@
     "db/",
     "fsw/",
     "swu/",
-    "server/"
+    "server/",
+    "common/"
   ],
   "main": "index.js",
   "scripts": {
