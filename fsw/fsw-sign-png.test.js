@@ -1,6 +1,6 @@
 
 const { signPng } = require('./fsw-sign-png');
-const len = 60;
+const len = 45;
 
 it('should have return a sign image', async () => {
   const res = await signPng('AS10011S10019S2e704S2e748M525x535S2e748483x510S10011501x466S20544510x500S10019476x475');

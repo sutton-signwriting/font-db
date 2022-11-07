@@ -1,6 +1,6 @@
 
 const { columnPng } = require('./fsw-column-png');
-const len = 60;
+const len = 45;
 
 it('should handle column data', async () => {
   const columnData = [

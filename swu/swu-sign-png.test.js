@@ -1,6 +1,6 @@
 
 const { signPng } = require('./swu-sign-png');
-const len = 60;
+const len = 45;
 
 it('should pass', () => {
   expect(true).toBe(true);

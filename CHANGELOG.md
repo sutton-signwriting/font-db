@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.2] - 2022-11-07
+### Changed
+- donate link
+- dependencies
+
+## [2.0.1] - 2022-06-24
+### Added
+- common dir in npm
+
 ## [2.0.0] - 2022-04-22
 ### Changed
 - function callbacks to async/await
@@ -26,6 +35,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - documentation for core modules
 
 
-[Unreleased]: https://github.com/sutton-signwriting/font-db/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/sutton-signwriting/font-db/compare/v2.0.2...HEAD
+[2.0.2]: https://github.com/sutton-signwriting/font-db/releases/tag/v2.0.2
+[2.0.1]: https://github.com/sutton-signwriting/font-db/releases/tag/v2.0.1
 [2.0.0]: https://github.com/sutton-signwriting/font-db/releases/tag/v2.0.0
 [1.0.1]: https://github.com/sutton-signwriting/font-db/releases/tag/v1.0.1

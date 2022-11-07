@@ -1,6 +1,6 @@
 
 const { columnsPng } = require('./swu-columns-png');
-const len = 60;
+const len = 45;
 
 it('should handle column data', async () => {
   const swuText = "𝠀񁲡񈩧𝠃𝤘𝤣񁲡𝣳𝣩񈩧𝤉𝣻 𝠀񃊢񃊫񋛕񆇡𝠃𝤘𝤧񃊫𝣻𝤕񃊢𝣴𝣼񆇡𝤎𝤂񋛕𝤆𝣦 񏌁𝣢𝤂";

@@ -12,7 +12,7 @@ This package supports both Formal SignWriting in ASCII (FSW) and SignWriting in 
 > Author: https://SteveSlevinski.me  
 > Channel: https://www.youtube.com/channel/UCXu4AXlG0rXFtk_5SzumDow  
 > Sponsor: https://www.patreon.com/signwriting  
-> Donate: https://paypal.me/signwriting
+> Donate: https://donate.sutton-signwriting.io
 
 ## Useful links
 
