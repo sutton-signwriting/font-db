@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.5] - 2023-10-21
+### Fixed
+- security issue
+
 ## [2.0.4] - 2023-10-01
 ### Fixed
 - security issue
@@ -43,7 +47,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - documentation for core modules
 
 
-[Unreleased]: https://github.com/sutton-signwriting/font-db/compare/v2.0.2...HEAD
+[Unreleased]: https://github.com/sutton-signwriting/font-db/compare/v2.0.5...HEAD
+[2.0.5]: https://github.com/sutton-signwriting/font-db/releases/tag/v2.0.5
+[2.0.4]: https://github.com/sutton-signwriting/font-db/releases/tag/v2.0.4
+[2.0.3]: https://github.com/sutton-signwriting/font-db/releases/tag/v2.0.3
 [2.0.2]: https://github.com/sutton-signwriting/font-db/releases/tag/v2.0.2
 [2.0.1]: https://github.com/sutton-signwriting/font-db/releases/tag/v2.0.1
 [2.0.0]: https://github.com/sutton-signwriting/font-db/releases/tag/v2.0.0

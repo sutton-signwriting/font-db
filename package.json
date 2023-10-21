@@ -1,7 +1,7 @@
 {
   "name": "@sutton-signwriting/font-db",
   "description": "a javascript package for node that generates SVG and PNG images for individual symbols and complete signs",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "keywords": [
     "sqlite",
     "font",
