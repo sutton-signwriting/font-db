@@ -46,10 +46,10 @@
     "server": "node server/server.js"
   },
   "dependencies": {
+    "@resvg/resvg-js": "^2.6.0",
     "@sutton-signwriting/core": "^1.5.10",
     "minimist": "^1.2.7",
-    "sqlite3": "^5.1.2",
-    "svg2img": "^0.9.4"
+    "sqlite3": "^5.1.2"
   },
   "devDependencies": {
     "jest": "^27.5.1"

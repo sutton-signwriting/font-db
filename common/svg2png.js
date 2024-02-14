@@ -1,14 +1,35 @@
 
-const svg2img = require('svg2img');
+const { Resvg } = require('@resvg/resvg-js');
 
-svg2png = function(svg) {
+/**
+ * Convert SVG to PNG
+ * @param {string} svg SVG string
+ * @param {{width?: number, height?: number}} scale Options for scaling
+ * @returns {Promise<Buffer>} PNG buffer
+ */
+svg2png = function(svg, scale = {}) {
+  const options = {};
+  if (scale.width) {
+    options.fitTo = {
+      mode: 'width',
+      value: scale.width
+    };
+  }
+  if (scale.height) {
+    options.fitTo = {
+      mode: 'height',
+      value: scale.height
+    };
+  }
   return new Promise(function (resolve, reject) {
-    svg2img(svg, (error, buffer) => {
-      if (error)
-        reject(error);
-      else
-        resolve(buffer);
-    });
+    try {
+      const resvg = new Resvg(svg, options);
+      const pngData = resvg.render();
+      const pngBuffer = pngData.asPng();
+      resolve(pngBuffer);
+    } catch (error) {
+      reject(error);
+    }
   });
 }
 
