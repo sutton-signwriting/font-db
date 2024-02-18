@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2024-02-18
+### Updated
+- svg to png library for speed improvement
+
+### Added
+- scaling to specific width or height for PNG
+- scaling and examples to built-in server
+
+### Fixed
+- security issue
+
 ## [2.0.5] - 2023-10-21
 ### Fixed
 - security issue

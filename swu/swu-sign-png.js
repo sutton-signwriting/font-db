@@ -7,7 +7,7 @@ const fs = require('fs');
  * Function that creates a binary PNG image from an SWU sign with an optional style string
  * @function swu.signPng
  * @param {string} swuSign - an SWU sign with optional style string
- * @param {{width?: number, height?: number} | undefined} scale - options for scaling
+ * @param {{width:(number|undefined),height:(number|undefined)}} [scale] - options for scaling to specific width or height
  * @returns {ArrayBuffer} sign png
  * @example
  * // using promise.then
@@ -37,7 +37,7 @@ const signPng = async (swuSign, scale) => {
  * Function that creates a data url PNG image from an SWU sign with an optional style string
  * @function swu.signPngDataUrl
  * @param {string} swuSign - an SWU sign with optional style string
- * @param {{width?: number, height?: number} | undefined} scale - options for scaling
+ * @param {{width:(number|undefined),height:(number|undefined)}} [scale] - options for scaling to specific width or height
  * @returns {string} sign png
  * @example
  * // using promise.then

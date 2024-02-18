@@ -7,7 +7,7 @@ const fs = require('fs');
  * Function that creates a binary PNG image from an FSW sign with an optional style string
  * @function fsw.signPng
  * @param {string} fswSign - an FSW sign with optional style string
- * @param {{width?: number, height?: number} | undefined} scale - options for scaling
+ * @param {{width:(number|undefined),height:(number|undefined)}} [scale] - options for scaling to specific width or height
  * @returns {ArrayBuffer} sign png
  * @example
  * // using promise.then
@@ -37,7 +37,7 @@ const signPng = async (fswSign, scale) => {
  * Function that creates a data url PNG image from an FSW sign with an optional style string
  * @function fsw.signPngDataUrl
  * @param {string} fswSign - an FSW sign with optional style string
- * @param {{width?: number, height?: number} | undefined} scale - options for scaling
+ * @param {{width:(number|undefined),height:(number|undefined)}} [scale] - options for scaling to specific width or height
  * @returns {string} sign png
  * @example
  * // using promise.then

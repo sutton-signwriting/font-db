@@ -7,7 +7,7 @@ const fs = require('fs');
  * Function that creates a binary PNG image from an SWU symbol key with an optional style string
  * @function swu.symbolPng
  * @param {string} swuSym - an SWU symbol key with optional style string
- * @param {{width?: number, height?: number} | undefined} scale - options for scaling
+ * @param {{width:(number|undefined),height:(number|undefined)}} [scale] - options for scaling to specific width or height
  * @returns {ArrayBuffer} symbol png
  * @example
  * // using promise.then
@@ -37,7 +37,7 @@ const symbolPng = async (swuSym, scale) => {
  * Function that creates a data url PNG image from an SWU symbol key with an optional stle string
  * @function swu.symbolPngDataUrl
  * @param {string} swuSym - an SWU symbol key with optional style string
- * @param {{width?: number, height?: number} | undefined} scale - options for scaling
+ * @param {{width:(number|undefined),height:(number|undefined)}} [scale] - options for scaling to specific width or height
  * @returns {string} symbol png
  * @example
  * // using promise.then

@@ -1,7 +1,7 @@
 {
   "name": "@sutton-signwriting/font-db",
   "description": "a javascript package for node that generates SVG and PNG images for individual symbols and complete signs",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "keywords": [
     "sqlite",
     "font",
@@ -40,9 +40,9 @@
     "test": "jest || true",
     "testit": "jest",
     "test:watch": "jest --watchAll || true",
-    "docs": "npx documentation build index.js --config documentation.yml -f html -o docs",
+    "docs": "documentation build index.js --config documentation.yml -f html -o docs",
     "postdocs": "node addstyle.js",
-    "docs:server": "npx documentation serve --watch index.js --config documentation.yml",
+    "docs:server": "documentation serve --watch index.js --config documentation.yml",
     "server": "node server/server.js"
   },
   "dependencies": {
@@ -52,6 +52,7 @@
     "sqlite3": "^5.1.2"
   },
   "devDependencies": {
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "documentation": "^14.0.3"
   }
 }

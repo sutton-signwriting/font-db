@@ -5,10 +5,18 @@ const swu = require('../swu');
 const fs = require('fs');
 const http = require('http');
 const url = require('url');
+const querystring = require('querystring');
 const prefix = '<?xml version="1.0" standalone="no"?>\n';
 
+function toInt(obj) {
+  for (const key in obj) {
+    obj[key] = parseInt(obj[key]);
+  }
+  return obj;
+}
 const server = http.createServer((request, response) => {
   const parsed = url.parse(request.url);
+  const parsedQuery = toInt(querystring.parse(parsed.query))
   const parts = decodeURIComponent(parsed.pathname).split('/');
   const label = parts.slice(1, 4).join('-');
   switch (label) {
@@ -21,7 +29,7 @@ const server = http.createServer((request, response) => {
       })
       break;
     case "fsw-symbol-png":
-      fsw.symbolPng(parts[4]).then( res => {
+      fsw.symbolPng(parts[4],parsedQuery).then( res => {
         response.writeHead(200, { "Content-Type": "image/png" })
         response.write(res)
         response.end();
@@ -43,7 +51,7 @@ const server = http.createServer((request, response) => {
       })
       break;
     case "fsw-sign-png":
-      fsw.signPng(parts[4]).then ( res => {
+      fsw.signPng(parts[4],parsedQuery).then ( res => {
         response.writeHead(200, { "Content-Type": "image/png" })
         response.write(res)
         response.end();
@@ -57,7 +65,7 @@ const server = http.createServer((request, response) => {
       })
       break;
     case "swu-symbol-svg":
-      swu.symbolSvg(parts[4]).then ( res => {
+      swu.symbolSvg(parts[4], parsedQuery).then ( res => {
         response.writeHead(200, { "Content-Type": "image/svg+xml; charset=utf-8" })
         response.write(prefix)
         response.write(res)
@@ -65,7 +73,7 @@ const server = http.createServer((request, response) => {
       })
       break;
     case "swu-symbol-png":
-      swu.symbolPng(parts[4]).then ( res => {
+      swu.symbolPng(parts[4],parsedQuery).then ( res => {
         response.writeHead(200, { "Content-Type": "image/png" })
         response.write(res)
         response.end();
@@ -87,7 +95,7 @@ const server = http.createServer((request, response) => {
       })
       break;
     case "swu-sign-png":
-      swu.signPng(parts[4]).then ( res => {
+      swu.signPng(parts[4],parsedQuery).then ( res => {
         response.writeHead(200, { "Content-Type": "image/png" })
         response.write(res)
         response.end();
