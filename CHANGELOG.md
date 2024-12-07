@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 2024-12-07
+### Updated
+- sutton-signwriting/core to v2 to support the SignWriting null symbol
+
+### Fixed
+- security issue
+
 ## [2.1.0] - 2024-02-18
 ### Updated
 - svg to png library for speed improvement
